@@ -14,7 +14,7 @@ const steps = ['Вычисление частот символов', 'Постр
 
 class App extends Component {
     render() {
-        const { curPage, AppActions, maxPage, word, letters, nums, nodes, treeStep, showCodes, codes, lt } = this.props;
+        const { curPage, AppActions, maxPage, word, letters, nums, nodes, treeStep, showCodes, codes, lt, showEncode } = this.props;
         return (
             <div className="app">
                 <Page letters={letters} 
@@ -32,6 +32,8 @@ class App extends Component {
                         codes={codes}
                         lt={lt}
                         showCodes={showCodes}
+                        showEncode={showEncode}
+                        getEncode={AppActions.getEncode}
                         phase={pagenames[curPage - 1]}/>
                 <Nav curPage={curPage} maxPage={maxPage} codes={codes} changePage={AppActions.changePage} letters={letters} step={steps[curPage - 1]}/>
             </div>

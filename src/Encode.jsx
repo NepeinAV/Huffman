@@ -37,28 +37,20 @@ class Encode extends Component {
         return code;
     }
 
-    splitCode(code){
-        let newcode = '';
-        for(let i = 0; i < code.length; i += 4) {
-            newcode += code.substr(i, 4) + ' ';
-        }
-        return newcode;
-    }
-
     render() {
-        const { word } = this.props;
+        const { word, showEncode, getEncode } = this.props;
         let code = this.encodeWord(word);
         let ascii = this.asciiEncode(word);
+        console.log('huffman', code);
+        console.log('8-bit charset', ascii);
         let percent = 100 - Math.round(code.length/ascii.length * 100);
         let p = 2 * Math.PI * 50;
-        console.log(p);
         return (
             <div className="encodepage">
                 <div className="leftcode">Исходная строка<div className="size">{ascii.length} bit</div></div>
                 <div className="percent">
                 <svg version="1.1" baseProfile="full" viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
-                    {100 - Math.round(code.length/ascii.length * 100)}%
-                    <circle cx="53" cy="53" r="50" stroke="#4a76a8" strokeLinecap="round" strokeDasharray="0 314.1592653589793" strokeWidth="6" fill="transparent" className="dash">
+                    <circle cx="53" cy="53" r="50" stroke="#4a76a8" strokeLinecap="round" strokeDasharray="0 314.1592653589793" transform="rotate(-90, 53,53)" strokeWidth="6" fill="transparent" className="dash">
                         <animate attributeType="CSS" attributeName="stroke-dasharray" from="0 314.1592653589793" to={`${p / 100 * percent}, ${p - p / 100 * percent}`} dur="0.5s" fill="freeze" repeatCount="1"/>
                     </circle>
                     <text dy="59" dx="53" textAnchor="middle" className="percenttext">{percent}%</text>    

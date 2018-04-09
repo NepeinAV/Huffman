@@ -142,8 +142,7 @@
 .svg {
     position: absolute;
     max-width: 1000px;
-    transition: 0.2s ease-in-out; // padding-bottom: 170px;
-    // display: inline-block; // height: auto;
+    transition: 0.2s ease-in-out;
     text {
         font-weight: 700;
         font-size: 20px;
@@ -151,18 +150,6 @@
     .svgnum {
         font-size: 16px;
         font-weight: 400;
-    }
-    .svgcircle {}
-    .svgside {
-        font-size: 13px;
-        opacity: 0;
-        transition: inherit;
-    }
-}
-
-.svg.laststep {
-    .svgside {
-        opacity: 1;
     }
 }
 
@@ -185,10 +172,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
     position: absolute;
-    bottom: 0;
     top: 0;
+    height: 100%;
     width: 100%;
     .leftcode,
     .rightcode {

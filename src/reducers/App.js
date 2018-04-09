@@ -1,7 +1,7 @@
 export const initialState = {
     curPage: 1,
     maxPage: 3,
-    word: 'Математика',
+    word: '',
     letters: [],
     nums: [],
     codes: [],

@@ -161,14 +161,6 @@
   font-size: 16px;
   font-weight: 400;
 }
-.svg .svgside {
-  font-size: 13px;
-  opacity: 0;
-  transition: inherit;
-}
-.svg.laststep .svgside {
-  opacity: 1;
-}
 .nextlevel {
   position: absolute;
   z-index: 1;
@@ -187,10 +179,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   position: absolute;
-  bottom: 0;
   top: 0;
+  height: 100%;
   width: 100%;
 }
 .encodepage .leftcode,

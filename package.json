@@ -2,7 +2,7 @@
     "name": "huffman",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://NepeinAV.github.io/huffman",
+    "homepage": "https://NepeinAV.github.io/React",
     "dependencies": {
         "gh-pages": "^1.1.0",
         "react": "^16.3.1",

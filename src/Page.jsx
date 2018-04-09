@@ -7,7 +7,7 @@ import Encode from './Encode';
 
 class Page extends Component {
     getPage(phase) {
-        const { word, changeWord, setLetters, letters, nums, nodesS, setNodes, setTreeStep, treeStep, setCodes, getCodes, showCodes, codes, lt } = this.props;
+        const { word, changeWord, setLetters, letters, nums, nodesS, setNodes, setTreeStep, treeStep, setCodes, getCodes, showCodes, codes, lt, showEncode, getEncode } = this.props;
         // console.log(nodesS, 'nodesS');
         switch (phase) {
             case 'get_word':
@@ -15,7 +15,7 @@ class Page extends Component {
             case 'build_tree':
                 return <BuildTree letters={letters} nums={nums} nodesS={nodesS} setTreeStep={setTreeStep} treeStep={treeStep} setNodes={setNodes} setCodes={setCodes} getCodes={getCodes} showCodes={showCodes}/>;
             case 'encode':
-                return <Encode word={word} codes={codes} lt={lt}/>
+                return <Encode word={word} codes={codes} lt={lt} showEncode={showEncode} getEncode={getEncode}/>
             default:
                 return 'def';
         }
