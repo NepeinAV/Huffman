@@ -1,0 +1,213 @@
+@arrow-size: 7px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: 100 16px Calibri Light;
+    outline: none;
+    user-select: none;
+}
+
+.navigation {
+    position: fixed;
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    left: 20px;
+    bottom: 20px;
+    transition: 0.1s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
+    .buttons {
+        display: flex;
+        padding: 10px 5px;
+        background: #efefef;
+        .back,
+        .forward {
+            cursor: pointer;
+            border: @arrow-size solid transparent;
+            transition: inherit;
+        }
+        .back {
+            border-right: @arrow-size solid #444;
+            margin-right: 8px;
+            &:hover {
+                border-right-color: #000;
+            }
+        }
+        .forward {
+            margin-left: 10px;
+            border-left: @arrow-size solid #444;
+            &:hover {
+                border-left-color: #000;
+            }
+        }
+    }
+    .title {
+        margin-left: 10px;
+    }
+}
+
+.getwordpage,
+.buildtreepage {
+    transition: 0.2s ease-in-out;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column; // justify-content: center;
+    .title {
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+    .inputword {
+        background: #eee;
+        border: none;
+        padding: 10px;
+        width: 300px;
+        transition: inherit;
+        font-size: 18px;
+        &:focus {
+            background: #eaeaea;
+        }
+    }
+    .letters,
+    .nodes {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        transition: 0.2s ease-in-out;
+        .letter,
+        .node {
+            font-size: 40px;
+            font-weight: 900; // text-align: center;
+            margin-left: 7px;
+            margin-right: 7px;
+            flex-basis: 100px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .num {
+            font-size: 16px;
+            margin-top: 7px
+        }
+    }
+}
+
+.buildtreepage {
+    top: 0;
+    .nodes {
+        width: 95%;
+        .node {
+            font-size: 20px;
+            flex-basis: 50px;
+        }
+    }
+    .codes {
+        margin-top: 153px;
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        transition: 0.2s ease-in-out;
+        .lt {
+            font-size: 40px;
+            font-weight: 900; // text-align: center;
+            margin-left: 7px;
+            margin-right: 7px;
+            flex-basis: 100px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .code {
+            font-size: 16px;
+            margin-top: 7px;
+            user-select: contain;
+        }
+    }
+}
+
+.svg {
+    position: absolute;
+    max-width: 1000px;
+    transition: 0.2s ease-in-out; // padding-bottom: 170px;
+    // display: inline-block; // height: auto;
+    text {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .svgnum {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .svgcircle {}
+    .svgside {
+        font-size: 13px;
+        opacity: 0;
+        transition: inherit;
+    }
+}
+
+.svg.laststep {
+    .svgside {
+        opacity: 1;
+    }
+}
+
+.nextlevel {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    margin: 0 auto;
+    background: #eee;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    &:hover {
+        background: #eaeaea;
+    }
+}
+
+.encodepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    .leftcode,
+    .rightcode {
+        padding: 20px;
+        width: 45%;
+        min-width: 350px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .percent {
+        min-width: 100px;
+        text-align: center;
+    }
+    .size {
+        font-size: 24px;
+        margin-top: 7px;
+    }
+    .percenttext {
+        font-size: 24px;
+    }
+}

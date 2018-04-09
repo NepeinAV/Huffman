@@ -1,0 +1,20 @@
+{
+    "1": {
+        "images": {
+            "0": {
+                "src": "./img/011.png",
+                "width": 1180,
+                "height": 1734
+            },
+            "length": 1
+        },
+        "text": {
+            "0": {
+                "text": "TExt",
+                "size": 16,
+                "position": "center"
+
+            }
+        }
+    }
+}
