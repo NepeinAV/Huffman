@@ -6,7 +6,8 @@ class Back extends Component {
         this.back = this.back.bind(this);
     }
     
-    back(e) {       
+    back(e) { 
+        console.log(e);      
         const { curPage, changePage } = this.props;
         if (curPage >= 2) changePage(curPage - 1);
     }
@@ -38,6 +39,24 @@ class Forward extends Component {
 }
 
 class Nav extends Component {
+    componentDidMount() {
+        window.addEventListener('keyup', (e) => {
+            if(e.keyCode === 37) this.back();
+            if(e.keyCode === 39) this.forward();
+        });
+    }
+    
+    forward(e) {
+        const { curPage, changePage, letters, codes } = this.props;
+        if (curPage === 1 && letters.length > 0) changePage(curPage + 1);
+        if (curPage === 2 && codes.length > 0) changePage(curPage + 1);
+    }
+    
+    back(e) {    
+        const { curPage, changePage } = this.props;
+        if (curPage >= 2) changePage(curPage - 1);
+    }
+
     render() {
         const { curPage, changePage, maxPage, step, letters, codes } = this.props;        
         return (

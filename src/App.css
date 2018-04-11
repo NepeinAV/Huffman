@@ -19,7 +19,7 @@
   opacity: 1;
 }
 .navigation .buttons {
-  display: flex;
+  display: none;
   padding: 10px 5px;
   background: #efefef;
 }
@@ -42,9 +42,6 @@
 }
 .navigation .buttons .forward:hover {
   border-left-color: #000;
-}
-.navigation .title {
-  margin-left: 10px;
 }
 .getwordpage,
 .buildtreepage {
@@ -160,6 +157,9 @@
 .svg .svgnum {
   font-size: 16px;
   font-weight: 400;
+}
+.svg .svgcircle {
+  fill: #f0f0f0;
 }
 .nextlevel {
   position: absolute;

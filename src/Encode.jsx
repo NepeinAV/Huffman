@@ -38,7 +38,7 @@ class Encode extends Component {
     }
 
     render() {
-        const { word, showEncode, getEncode } = this.props;
+        const { word } = this.props;
         let code = this.encodeWord(word);
         let ascii = this.asciiEncode(word);
         console.log('huffman', code);
